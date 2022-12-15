@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSplU6KkKo/9/m960ZnwTADHOTOPDHhl1/w5kbYmL3JwpSi3mQGDklT0JdGad66bNG9nXToW0E1Oz5v9C/3p4w==",
+  "dgSpecHash": "YUXnNhnmXzPMnj4q+kxMyKITRpz1C0RKLMBnwgyhlmlkeKwik8RWuXBEX7R4UKoZIwdxCpeOZqQkFs3pQtnh3A==",
   "success": true,
-  "projectFilePath": "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
+  "projectFilePath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

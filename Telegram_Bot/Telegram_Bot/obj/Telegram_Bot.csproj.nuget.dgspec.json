@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {}
+    "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {}
   },
   "projects": {
-    "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {
+    "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
+        "projectUniqueName": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
         "projectName": "Telegram_Bot",
-        "projectPath": "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
+        "projectPath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\obj\\",
+        "outputPath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

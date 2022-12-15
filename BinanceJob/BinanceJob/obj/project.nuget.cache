@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nSPtOI7QkdpUc5FOuSs5Ax+EF8qbf0QMevnnzvKpzY9BukhL4TN+e04VHpLsI9vdGh0OoyOERQ2akMahwBNKcA==",
+  "dgSpecHash": "7BCQVj0aNiJZb3hd2cLL/5j0Qtf5KgJ+2hjiC6ZvCOvx3l+pUuRzP024hnA6BZ6lZkBIb/Tlm2nkrDk261R9AA==",
   "success": true,
-  "projectFilePath": "C:\\projects\\С#\\BinanceProject\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
+  "projectFilePath": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

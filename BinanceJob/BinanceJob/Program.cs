@@ -9,31 +9,40 @@ namespace BinanceJob
     {
         public static async Task Main(string[] args)
         {
-            Console.WriteLine("1");
             await InitMigrate();
-            Console.WriteLine("3");
-            while (true)
-            {
-                job();
-                Thread.Sleep(20000);
-            }
+            await jobController();
             Console.ReadKey();
         }
 
         /*
          * Выполнение определенной задачи
         */
-        public static async Task job()
+        public static async Task job(string nameVal)
         {
             Console.WriteLine("Начинаю работу");
             Thread t = new Thread(async () =>
             {
-                ServiceHttp.getValueofPart("TRXUSDT");
+                ServiceHttp.getValueofPart(nameVal);
                 Console.WriteLine("Закончил работу");
             });
             t.Start();
+        }
 
+        public static async Task jobController()
+        {
+            while (true)
+            {
+                using (DbTransaction db = new DbTransaction())
+                {
+                    var result = (from elem in db.valueNames
+                                  where elem.isBlocked == false
+                                  select elem.Name).ToList();
+                    foreach (string names in result)
+                         job(names);
+                    Thread.Sleep(20000);
 
+                }
+            }
         }
 
         /*
@@ -47,7 +56,6 @@ namespace BinanceJob
                 {
                     db.Database.Migrate();
                 }
-                Console.WriteLine("2");
             });
            
         }

@@ -1211,11 +1211,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\С#\\BinanceProject\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
+      "projectUniqueName": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
       "projectName": "BinanceJob",
-      "projectPath": "C:\\projects\\С#\\BinanceProject\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
+      "projectPath": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\С#\\BinanceProject\\BinanceJob\\BinanceJob\\obj\\",
+      "outputPath": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1237,8 +1237,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {
-              "projectPath": "C:\\projects\\С#\\BinanceProject\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj"
+            "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {
+              "projectPath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj"
             }
           }
         }
