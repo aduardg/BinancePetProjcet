@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj": {}
+    "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj": {}
   },
   "projects": {
-    "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj": {
+    "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
+        "projectUniqueName": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
         "projectName": "BinanceJob",
-        "projectPath": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\С#\\BinancePetProjcet\\BinanceJob\\BinanceJob\\obj\\",
+        "projectPath": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceJob\\BinanceJob\\BinanceJob.csproj",
+        "packagesPath": "C:\\Users\\Eduard\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceJob\\BinanceJob\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Eduard\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,17 +26,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {
-                "projectPath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -74,8 +69,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -84,83 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
-        "projectName": "Telegram_Bot",
-        "projectPath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\Telegram_Bot.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\С#\\BinancePetProjcet\\Telegram_Bot\\Telegram_Bot\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "telegram.bot": {
-              "target": "Package",
-              "version": "[18.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

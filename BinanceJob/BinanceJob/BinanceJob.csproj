@@ -17,8 +17,4 @@
     <PackageReference Include="RestSharp" Version="108.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Telegram_Bot\Telegram_Bot\Telegram_Bot.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -18,14 +18,13 @@ namespace BinanceJob
          * Выполнение определенной задачи
         */
         public static async Task job(string nameVal)
-        {
+        {            
             Console.WriteLine("Начинаю работу");
-            Thread t = new Thread(async () =>
+            await Task.Run(() =>
             {
                 ServiceHttp.getValueofPart(nameVal);
                 Console.WriteLine("Закончил работу");
             });
-            t.Start();
         }
 
         public static async Task jobController()
@@ -37,11 +36,13 @@ namespace BinanceJob
                     var result = (from elem in db.valueNames
                                   where elem.isBlocked == false
                                   select elem.Name).ToList();
-                    foreach (string names in result)
-                         job(names);
-                    Thread.Sleep(20000);
 
+                    foreach (string names in result)
+                         await job(names);                                        
+                    
                 }
+
+                Thread.Sleep(20000);
             }
         }
 

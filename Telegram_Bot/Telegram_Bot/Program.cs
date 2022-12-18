@@ -8,14 +8,15 @@ namespace Telegram_Bot
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-           Initialization();
-           Console.ReadKey();
+           await Initialization();
+           Console.Read();
         }
 
         private static Task Error(ITelegramBotClient arg1, Exception arg2, CancellationToken arg3)
         {
+            Console.WriteLine("Ошибка");
             throw new NotImplementedException();
         }
 
@@ -38,7 +39,7 @@ namespace Telegram_Bot
             
         }        
 
-        public static void Initialization()
+        public static async Task Initialization()
         {
             /*
             *Добавление миграции
@@ -50,9 +51,29 @@ namespace Telegram_Bot
 
             var botClient = new TelegramBotClient("5956542091:AAHrExySOH-Q17MJBFbvD8OMoCpj_3hyH7U");
 
+            Console.WriteLine("Начал обработку сообщений");
+
             botClient.StartReceiving(Update, Error);
 
-            Console.WriteLine("Начал обработку сообщений");
+            await sendMessageJobController(botClient);            
+        }
+
+        public static async Task sendMessageInfo(TelegramBotClient telegramBot)
+        {
+            await Task.Run(() =>
+            {
+                telegramBot.SendTextMessageAsync("546140361", EventsService.CheckEventsForUser().Item2);
+            });
+        }
+
+        public static async Task sendMessageJobController(TelegramBotClient telegramBot)
+        {
+            while (true)
+            {
+                await sendMessageInfo(telegramBot);
+                Thread.Sleep(1800000);
+            }
+            
         }
     }
 }

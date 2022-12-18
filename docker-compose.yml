@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+    binance:
+        container_name: binance_job
+        image: binance_job:latest
+        build: ./BinanceJob/
+        environment:
+            DATABASE_ADDRESS: 192.168.1.92
+    telegramm_bot:
+        container_name: telegramm_bot
+        image: telegramm_bot
+        build: 
+            dockerfile: ./DockerfileTB
+        environment:
+            DATABASE_ADDRESS: 192.168.1.92
+        
