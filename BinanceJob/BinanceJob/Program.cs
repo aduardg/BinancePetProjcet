@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using Microsoft.Extensions.Configuration;
+using BinanceJob.Services.TaskService;
 
 namespace BinanceJob
 {
@@ -10,27 +11,21 @@ namespace BinanceJob
         public static async Task Main(string[] args)
         {
             await InitMigrate();
-            await jobController();
+            /*await jobController();*/
+            BinanceTaskService taskService = new BinanceTaskService(jobController,10);
             Console.ReadKey();
         }
 
         /*
          * Выполнение определенной задачи
         */
-        public static async Task job(string nameVal)
-        {            
-            Console.WriteLine("Начинаю работу");
-            await Task.Run(() =>
-            {
-                ServiceHttp.getValueofPart(nameVal);
-                Console.WriteLine("Закончил работу");
-            });
+        public static void job(object ? nameVal)
+        {                        
+           ServiceHttp.getValueofPart((string)nameVal);
         }
 
-        public static async Task jobController()
-        {
-            while (true)
-            {
+        public static void jobController()
+        {            
                 using (DbTransaction db = new DbTransaction())
                 {
                     var result = (from elem in db.valueNames
@@ -38,12 +33,10 @@ namespace BinanceJob
                                   select elem.Name).ToList();
 
                     foreach (string names in result)
-                         await job(names);                                        
-                    
-                }
-
-                Thread.Sleep(20000);
-            }
+                    {
+                        ThreadPool.QueueUserWorkItem(job, names);
+                    }                                                                                   
+                }           
         }
 
         /*

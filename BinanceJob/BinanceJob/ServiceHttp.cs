@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BinanceJob.Services.LoggerService;
 using BinanceJob.Models;
 using BinanceJob.Mappers;
 
@@ -14,16 +10,15 @@ namespace BinanceJob
     {
         public static void getValueofPart(string namePart)
         {
+            BinanceLoggerService logger = new BinanceLoggerService();
             try
             {
-
-
                 var client = new RestClient($"https://api.binance.com/api/v3/trades?symbol={namePart}&limit=500");
                 var request = new RestRequest("", Method.Get);
                 RestResponse response = client.Execute(request);
 
 
-                var responseData = JArray.Parse(response.Content);
+                var responseData = JArray.Parse(response.Content is null ? throw new Exception("Content is null") : response.Content);
                 List<TradeElement> tradeList = new List<TradeElement>();
                 foreach (var element in responseData)
                 {
@@ -33,13 +28,11 @@ namespace BinanceJob
                         ));
                 }
 
-                Console.WriteLine($"Проверка : {TradeElementMapper.updateDatabaseFromList(tradeList)}");
-
-                Console.WriteLine(responseData.Count);
+                logger.Info($"Проверка {namePart}: {TradeElementMapper.updateDatabaseFromList(tradeList)}");
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                logger.Error(ex.Message);
             }
         }
     }
