@@ -7,3 +7,11 @@ services:
         POSTGRES_PASSWORD: "postgres"
     ports:
         -   "5000:5432"     
+  
+  binanceservice:
+    stdin_open: true
+    image: binanceservice:latest
+    environment: 
+      DB_CONN: "Host=postgres;Port=5432;Database=BinanceProject;Username=postgres;Password=postgres"
+    build:
+      dockerfile: ./DockerfileBinanceService

@@ -15,6 +15,9 @@ namespace DAL.Migrations
             migrationBuilder.EnsureSchema(
                 name: "Admin");
 
+            migrationBuilder.EnsureSchema(
+                name: "Binance");
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 schema: "Admin",
@@ -57,6 +60,58 @@ namespace DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MiddleStatistic",
+                schema: "Binance",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    middleStatistic = table.Column<double>(type: "double precision", nullable: false),
+                    namePart = table.Column<string>(type: "text", nullable: false),
+                    dateCreate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MiddleStatistic", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TradeElements",
+                schema: "Binance",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    price = table.Column<string>(type: "text", nullable: true),
+                    qty = table.Column<string>(type: "text", nullable: true),
+                    quoteQty = table.Column<string>(type: "text", nullable: true),
+                    time = table.Column<long>(type: "bigint", nullable: false),
+                    isBuyerMaker = table.Column<bool>(type: "boolean", nullable: false),
+                    isBestMatch = table.Column<bool>(type: "boolean", nullable: false),
+                    namePart = table.Column<string>(type: "text", nullable: true),
+                    checkColumn = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TradeElements", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ValueNames",
+                schema: "Binance",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    isActive = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ValueNames", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -243,6 +298,18 @@ namespace DAL.Migrations
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens",
                 schema: "Admin");
+
+            migrationBuilder.DropTable(
+                name: "MiddleStatistic",
+                schema: "Binance");
+
+            migrationBuilder.DropTable(
+                name: "TradeElements",
+                schema: "Binance");
+
+            migrationBuilder.DropTable(
+                name: "ValueNames",
+                schema: "Binance");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles",

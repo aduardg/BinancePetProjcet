@@ -8,7 +8,7 @@ namespace DAL.Extension
     {
         public static IServiceCollection AddDbModuleWhichExtensions(this IServiceCollection services)
         {
-            var envConnection = Environment.GetEnvironmentVariable("DatabaseConnection") ??
+            var envConnection = Environment.GetEnvironmentVariable("DB_CONN") ??
                 "Host=localhost;Port=5000;Database=BinanceProject;Username=postgres;Password=postgres";
 
             services.AddDbContext<ApplicationContext>(options =>

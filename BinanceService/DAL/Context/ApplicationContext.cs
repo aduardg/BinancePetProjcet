@@ -9,6 +9,9 @@ namespace DAL.Context
 {
     public class ApplicationContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<TradeElement> tradeElements { get; set; }
+        public DbSet<ValueName> valueNames { get; set; }
+        public DbSet<MiddleStatsEntity> middleStatsEntities { get; set; }
         public ApplicationContext(DbContextOptions options)
             :base(options)
         {

@@ -96,6 +96,86 @@ namespace DAL.Migrations
                     b.ToTable("AspNetUsers", "Admin");
                 });
 
+            modelBuilder.Entity("Domain.Entity.Models.MiddleStatsEntity", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("dateCreate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<double>("middleStatistic")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("namePart")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("MiddleStatistic", "Binance");
+                });
+
+            modelBuilder.Entity("Domain.Entity.Models.TradeElement", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<string>("checkColumn")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("isBestMatch")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("isBuyerMaker")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("namePart")
+                        .HasColumnType("text");
+
+                    b.Property<string>("price")
+                        .HasColumnType("text");
+
+                    b.Property<string>("qty")
+                        .HasColumnType("text");
+
+                    b.Property<string>("quoteQty")
+                        .HasColumnType("text");
+
+                    b.Property<long>("time")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.ToTable("TradeElements", "Binance");
+                });
+
+            modelBuilder.Entity("Domain.Entity.Models.ValueName", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ValueNames", "Binance");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
