@@ -41,8 +41,8 @@ namespace BinanceJob.Jobs
 
 
                         var elementsToResult = elementsFromTime.Where(x =>
-                        DateTimeOffset.UtcNow.AddHours(-1) <= DateTimeOffset.FromUnixTimeMilliseconds(x.time) &&
-                        DateTimeOffset.FromUnixTimeMilliseconds(x.time) <= DateTimeOffset.UtcNow).OrderByDescending(x => x.time).ToList();
+                        DateTime.UtcNow.AddHours(-1) <= x.time &&
+                        x.time <= DateTime.UtcNow).OrderByDescending(x => x.time).ToList();
 
                         _logger.Information($"Начинаю формирование статистики для валютной пары {valueName.Name}");
                         _logger.Information($"{DateTimeOffset.UtcNow.AddHours(-1)}");
@@ -70,8 +70,8 @@ namespace BinanceJob.Jobs
                         
 
                         var elementsToResult = elementsFromTime.Where(x =>
-                        DateTimeOffset.UtcNow.AddHours(-1) <= DateTimeOffset.FromUnixTimeMilliseconds(x.time) &&
-                        DateTimeOffset.FromUnixTimeMilliseconds(x.time) <= DateTimeOffset.UtcNow).ToList();
+                        DateTime.UtcNow.AddHours(-1) <= x.time &&
+                        x.time <= DateTime.UtcNow).ToList();
 
                         var sum = elementsToResult.Sum(x => double.Parse(x.quoteQty, CultureInfo.InvariantCulture));
                         _logger.Information($"{sum}");

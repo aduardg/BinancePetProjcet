@@ -9,7 +9,8 @@ namespace Domain.Entity.Models
         public string? price { get; set; }
         public string? qty { get; set; }
         public string? quoteQty { get; set; }
-        public long time { get; set; }
+        [Column(TypeName = "timestamp without time zone")]
+        public DateTime time { get; set; }
 
         //false - покупка
         //true - продажа
@@ -18,7 +19,7 @@ namespace Domain.Entity.Models
         public string? namePart { get; set; }
         public string? checkColumn { get; set; }
 
-        public TradeElement(int id, string? price, string? qty, string? quoteQty, long time, bool isBuyerMaker, bool isBestMatch, string? namePart)
+        public TradeElement(int id, string? price, string? qty, string? quoteQty, DateTime time, bool isBuyerMaker, bool isBestMatch, string? namePart)
         {
             this.id = id;
             this.price = price;

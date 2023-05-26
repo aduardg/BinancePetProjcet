@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230430082753_init")]
+    [Migration("20230526135108_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -108,7 +108,7 @@ namespace DAL.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<DateTime>("dateCreate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<double>("middleStatistic")
                         .HasColumnType("double precision");
@@ -151,8 +151,8 @@ namespace DAL.Migrations
                     b.Property<string>("quoteQty")
                         .HasColumnType("text");
 
-                    b.Property<long>("time")
-                        .HasColumnType("bigint");
+                    b.Property<DateTime>("time")
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("id");
 

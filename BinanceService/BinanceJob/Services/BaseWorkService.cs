@@ -1,15 +1,11 @@
-﻿using DAL.Context;
+﻿using AutoMapper;
+using DAL.Context;
 using DAL.Repository;
 using Domain.Entity.Models;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace BinanceJob.Services
 {
@@ -19,15 +15,18 @@ namespace BinanceJob.Services
         IGenericRepository<TradeElement> _repo;
         ILogger _logger;
         ApplicationContext _context;
+        IMapper _mapper;
 
         public BaseWorkService(ApiClient apiClient, IGenericRepository<TradeElement> repo,
-            ILogger logger, ApplicationContext context)
+            ILogger logger, ApplicationContext context, IMapper mapper)
         {
             _apiClient = apiClient;
             _repo = repo;
             _logger = logger.ForContext<BaseWorkService>();
             _context = context;
+            _mapper = mapper;
         }
+       
         public async Task Run()
         {
             while (true)
@@ -41,14 +40,9 @@ namespace BinanceJob.Services
                     await SendToBDResult(res, valueName.Name);
                 }
 
-                _logger.Information("Сон на 10 секунд");
-                await Task.Delay(10000);
+                _logger.Information("Сон на 4 секундs");
+                await Task.Delay(4000);
             }
-
-            /*var res = await _apiClient.GetData("LTCUSDT");
-            await SendToBDResult(res, "LTCUSDT");
-            
-            await Console.Out.WriteLineAsync("Ру");*/
         }
 
         /// <summary>
@@ -65,10 +59,25 @@ namespace BinanceJob.Services
             }
             else
             {
-                List<TradeElement> tradeElements = JsonSerializer.Deserialize<List<TradeElement>>(result)
-                    ?? new List<TradeElement>();
+                List<TradeElementView> tradeElements = JsonSerializer.Deserialize<List<TradeElementView>>(result)
+                    ?? new List<TradeElementView>();
 
-                foreach (var element in tradeElements)
+                try
+                {                   
+                    foreach(var item in tradeElements)
+                        item.namePart = namePart;
+
+                    var temp = _mapper.Map<IEnumerable<TradeElement>>(tradeElements.Where(e => _context.tradeElements.Find(e.id) == null));
+                    await _context.AddRangeAsync(temp);
+                    await _context.SaveChangesAsync();
+                    _logger.Information($"Запись {namePart} прошла успешно");
+                    _context.ChangeTracker.Clear();
+                }
+                catch(Exception ex)
+                {
+                    _logger.Fatal($"Произошла ошибка с записью \n Текст: {ex.Message}");
+                }
+                /*foreach (var element in tradeElements)
                 {
                     try
                     {
@@ -84,9 +93,9 @@ namespace BinanceJob.Services
                         _logger.Fatal($"Произошла ошибка с записью \n Текст: {ex.Message}");
                     }
                     
-                }
+                }*/
 
-                _logger.Information($"Запись {namePart} прошла успешно");
+                
             }
         }
     }

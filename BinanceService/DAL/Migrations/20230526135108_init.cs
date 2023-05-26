@@ -71,7 +71,7 @@ namespace DAL.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     middleStatistic = table.Column<double>(type: "double precision", nullable: false),
                     namePart = table.Column<string>(type: "text", nullable: false),
-                    dateCreate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    dateCreate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -88,7 +88,7 @@ namespace DAL.Migrations
                     price = table.Column<string>(type: "text", nullable: true),
                     qty = table.Column<string>(type: "text", nullable: true),
                     quoteQty = table.Column<string>(type: "text", nullable: true),
-                    time = table.Column<long>(type: "bigint", nullable: false),
+                    time = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     isBuyerMaker = table.Column<bool>(type: "boolean", nullable: false),
                     isBestMatch = table.Column<bool>(type: "boolean", nullable: false),
                     namePart = table.Column<string>(type: "text", nullable: true),

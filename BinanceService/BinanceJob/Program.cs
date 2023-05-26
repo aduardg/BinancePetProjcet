@@ -1,12 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Infrastructure.Extensions;
-using Microsoft.Extensions.Hosting;
 using Serilog;
 using BinanceJob.Services;
-using Domain.Interfaces;
 using DAL.Repository;
-using Quartz;
-using BinanceJob.Jobs;
 using Quartz.Impl;
 using BinanceJob;
 
@@ -25,7 +21,8 @@ namespace BinanceService
                 .AddTransient<ApiClient>()
                 .AddTransient<BaseWorkService>()
                 .AddTransient(typeof(IGenericRepository<>), typeof(BinanceGenericRepository<>))
-                .AddTransient<SchedulerWorkService>();
+                .AddTransient<SchedulerWorkService>()
+                .AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var scheduler = StdSchedulerFactory.GetDefaultScheduler().GetAwaiter().GetResult();
             scheduler.JobFactory = new MyJobFactory(services.BuildServiceProvider());

@@ -148,8 +148,8 @@ namespace DAL.Migrations
                     b.Property<string>("quoteQty")
                         .HasColumnType("text");
 
-                    b.Property<long>("time")
-                        .HasColumnType("bigint");
+                    b.Property<DateTime>("time")
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("id");
 
