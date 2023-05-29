@@ -93,6 +93,11 @@ namespace BinanceJob.Jobs
                         $"Ошибка: {ex.Message}");
                 }
 
+                finally
+                {
+                    _context.ChangeTracker.Clear();
+                }
+
             }
         }
     }

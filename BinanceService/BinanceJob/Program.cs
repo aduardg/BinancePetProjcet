@@ -22,6 +22,7 @@ namespace BinanceService
                 .AddTransient<BaseWorkService>()
                 .AddTransient(typeof(IGenericRepository<>), typeof(BinanceGenericRepository<>))
                 .AddTransient<SchedulerWorkService>()
+                .AddHttpClient()
                 .AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var scheduler = StdSchedulerFactory.GetDefaultScheduler().GetAwaiter().GetResult();

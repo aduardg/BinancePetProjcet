@@ -174,3 +174,6 @@ C:\Users\e.gudz\Desktop\projects\C(sharp)\BinancePetProjcet\BinanceService\Binan
 C:\Users\e.gudz\Desktop\projects\C(sharp)\BinancePetProjcet\BinanceService\BinanceJob\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\e.gudz\Desktop\projects\C(sharp)\BinancePetProjcet\BinanceService\BinanceJob\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\e.gudz\Desktop\projects\C(sharp)\BinancePetProjcet\BinanceService\BinanceJob\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Projects\BigProjects\BinancePetProjcet\BinanceService\BinanceJob\bin\Debug\net6.0\AutoMapper.dll
+C:\Projects\BigProjects\BinancePetProjcet\BinanceService\BinanceJob\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Projects\BigProjects\BinancePetProjcet\BinanceService\BinanceJob\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
