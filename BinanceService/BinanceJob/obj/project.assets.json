@@ -1301,7 +1301,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DAL": "1.0.0",
-          "Serilog": "2.12.0"
+          "Serilog": "2.12.0",
+          "Serilog.Sinks.Console": "4.1.0"
         },
         "compile": {
           "bin/placeholder/Infrastructure.dll": {}
@@ -3151,24 +3152,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eduard\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\e.gudz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceService\\BinanceJob\\BinanceJob.csproj",
+      "projectUniqueName": "C:\\Users\\e.gudz\\Desktop\\projects\\BigProj\\BinancePetProjcet\\BinanceService\\BinanceJob\\BinanceJob.csproj",
       "projectName": "BinanceJob",
-      "projectPath": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceService\\BinanceJob\\BinanceJob.csproj",
-      "packagesPath": "C:\\Users\\Eduard\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceService\\BinanceJob\\obj\\",
+      "projectPath": "C:\\Users\\e.gudz\\Desktop\\projects\\BigProj\\BinancePetProjcet\\BinanceService\\BinanceJob\\BinanceJob.csproj",
+      "packagesPath": "C:\\Users\\e.gudz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\e.gudz\\Desktop\\projects\\BigProj\\BinancePetProjcet\\BinanceService\\BinanceJob\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Eduard\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\e.gudz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3176,15 +3172,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceService\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Projects\\BigProjects\\BinancePetProjcet\\BinanceService\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\e.gudz\\Desktop\\projects\\BigProj\\BinancePetProjcet\\BinanceService\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\e.gudz\\Desktop\\projects\\BigProj\\BinancePetProjcet\\BinanceService\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -3256,7 +3251,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

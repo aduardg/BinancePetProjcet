@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using Domain.Entity.Enums;
 
 namespace BinanceJob.Jobs
 {
@@ -25,12 +26,14 @@ namespace BinanceJob.Jobs
 
         public async Task Execute(IJobExecutionContext context)
         {
+            
             IList<ValueName> valueNames = await _context.Set<ValueName>().Where(x => x.isActive == true).ToListAsync();
 
             foreach (ValueName valueName in valueNames)
             {
                 var element = await _context.Set<MiddleStatsEntity>()
-                    .Where(x => x.namePart == valueName.Name).FirstOrDefaultAsync();
+                    .Where(x => x.namePart == valueName.Name && x.nameStatistic == NameStatisticEnum.VolumeStatistic.ToString())
+                    .FirstOrDefaultAsync();
 
                 try
                 {
@@ -79,8 +82,9 @@ namespace BinanceJob.Jobs
                         await _context.middleStatsEntities.AddAsync(new MiddleStatsEntity()
                         {
                             dateCreate = DateTime.Now,
-                             middleStatistic = sum,
-                             namePart = valueName.Name,
+                            middleStatistic = sum,
+                            namePart = valueName.Name,
+                            nameStatistic = NameStatisticEnum.VolumeStatistic.ToString(),
                         });                        
 
                         await _context.SaveChangesAsync();

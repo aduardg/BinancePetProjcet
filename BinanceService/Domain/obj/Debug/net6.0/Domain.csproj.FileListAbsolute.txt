@@ -26,3 +26,17 @@ C:\Projects\BigProjects\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0
 C:\Projects\BigProjects\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.pdb
 C:\Projects\BigProjects\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.genruntimeconfig.cache
 C:\Projects\BigProjects\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\ref\Domain.dll
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\bin\Debug\net6.0\Domain.runtimeconfig.json
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.dll
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\refint\Domain.dll
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\Domain.genruntimeconfig.cache
+C:\Users\e.gudz\Desktop\projects\BigProj\BinancePetProjcet\BinanceService\Domain\obj\Debug\net6.0\ref\Domain.dll

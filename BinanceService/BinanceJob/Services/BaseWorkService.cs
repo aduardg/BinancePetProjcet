@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DAL.Context;
 using DAL.Repository;
+using Domain.Entity.Enums;
 using Domain.Entity.Models;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +31,8 @@ namespace BinanceJob.Services
         public async Task Run()
         {
             while (true)
-            {
+            { 
+
                 List<ValueName> valueNames = await _context.Set<ValueName>()
                     .Where(x => x.isActive == true).ToListAsync();
 

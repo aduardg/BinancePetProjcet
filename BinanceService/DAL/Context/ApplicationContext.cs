@@ -12,6 +12,7 @@ namespace DAL.Context
         public DbSet<TradeElement> tradeElements { get; set; }
         public DbSet<ValueName> valueNames { get; set; }
         public DbSet<MiddleStatsEntity> middleStatsEntities { get; set; }
+        public DbSet<TelegramInfo> telegramInfos { get; set; }
         public ApplicationContext(DbContextOptions options)
             :base(options)
         {
@@ -25,7 +26,7 @@ namespace DAL.Context
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.HasDefaultSchema("Admin");
+            builder.HasDefaultSchema("Admin");           
             base.OnModelCreating(builder);
         }
     }

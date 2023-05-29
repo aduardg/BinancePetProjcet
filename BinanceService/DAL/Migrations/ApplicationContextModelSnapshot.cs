@@ -77,6 +77,9 @@ namespace DAL.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
+                    b.Property<int?>("TelegramId")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
 
@@ -92,6 +95,8 @@ namespace DAL.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
+
+                    b.HasIndex("TelegramId");
 
                     b.ToTable("AspNetUsers", "Admin");
                 });
@@ -114,9 +119,37 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("nameStatistic")
+                        .HasColumnType("text");
+
                     b.HasKey("id");
 
                     b.ToTable("MiddleStatistic", "Binance");
+                });
+
+            modelBuilder.Entity("Domain.Entity.Models.TelegramInfo", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<long?>("ChatId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("TelegramInfo", "Admin");
                 });
 
             modelBuilder.Entity("Domain.Entity.Models.TradeElement", b =>
@@ -306,6 +339,15 @@ namespace DAL.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", "Admin");
+                });
+
+            modelBuilder.Entity("Domain.Entity.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("Domain.Entity.Models.TelegramInfo", "TelegramInfo")
+                        .WithMany()
+                        .HasForeignKey("TelegramId");
+
+                    b.Navigation("TelegramInfo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

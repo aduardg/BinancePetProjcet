@@ -1,7 +1,8 @@
 version: "3.3"
 services:
-  postgres:
+  postgres:  
     image: postgres:latest
+    container_name: postgres
     environment:
         POSTGRES_USER: "postgres"
         POSTGRES_PASSWORD: "postgres"
@@ -9,6 +10,7 @@ services:
         -   "5000:5432"     
   
   binanceservice:
+    container_name: binanceservice
     stdin_open: true
     image: binanceservice:latest
     environment: 

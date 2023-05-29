@@ -16,5 +16,6 @@ namespace Domain.Entity.Models
         public string namePart { get; set; }
         [Column(TypeName = "timestamp without time zone")]
         public DateTime dateCreate { get; set; }
+        public string? nameStatistic { get; set; }
     }
 }
