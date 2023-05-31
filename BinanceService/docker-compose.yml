@@ -17,3 +17,12 @@ services:
       DB_CONN: "Host=postgres;Port=5432;Database=BinanceProject;Username=postgres;Password=postgres"
     build:
       dockerfile: ./DockerfileBinanceService
+
+  telegrambot:
+    container_name: telegrambot
+    stdin_open: true
+    image: telegrambot:latest
+    environment:
+      DB_CONN: "Host=postgres;Port=5432;Database=BinanceProject;Username=postgres;Password=postgres"
+    build: 
+      dockerfile: ./DockerfileTelegramBot
