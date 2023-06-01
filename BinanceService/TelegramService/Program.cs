@@ -7,8 +7,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Quartz.Impl;
 using Serilog;
-using Telegram.Bot;
-using Telegram.Bot.Types;
 using TelegramService.Quartz.JobFactory;
 using TelegramService.Services;
 

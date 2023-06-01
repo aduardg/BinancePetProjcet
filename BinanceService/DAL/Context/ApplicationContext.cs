@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Domain.Entity.Models;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore.Design;
+using Domain.Entity.SaveModels;
 
 namespace DAL.Context
 {
@@ -11,8 +10,10 @@ namespace DAL.Context
     {
         public DbSet<TradeElement> tradeElements { get; set; }
         public DbSet<ValueName> valueNames { get; set; }
-        public DbSet<MiddleStatsEntity> middleStatsEntities { get; set; }
+        public DbSet<MiddleStatsEntity> middleStatsEntities { get; set; }        
         public DbSet<TelegramInfo> telegramInfos { get; set; }
+
+        public DbSet<SaveMiddleStatsEntities> saveMiddleStatsEntities { get; set; }
         public ApplicationContext(DbContextOptions options)
             :base(options)
         {

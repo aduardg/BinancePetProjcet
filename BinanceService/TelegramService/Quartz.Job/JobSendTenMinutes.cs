@@ -1,4 +1,5 @@
 ﻿using DAL.Context;
+using Domain.Entity.Enums;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
 using Serilog;
@@ -44,10 +45,12 @@ namespace TelegramService.Quartz.Job
 
                     var sum = elements.Sum(element => double.Parse(element.quoteQty, CultureInfo.InvariantCulture));
 
-                    var volumeValue = await _context.middleStatsEntities.Where(element => element.namePart == activeValue.Name).FirstOrDefaultAsync();
+                    var volumeValue = await _context.middleStatsEntities
+                        .Where(element => element.namePart == activeValue.Name && element.nameStatistic == NameStatisticEnum.VolumeStatistic.ToString())
+                        .FirstOrDefaultAsync();
                     
                     //отправка статистики
-                    if (sum >= volumeValue?.middleStatistic * 1.4)
+                    if (sum >= volumeValue?.middleStatistic * 1.2)
                     {
                         var UsersWaitMessage = await _context.Users.Include(u => u.TelegramInfo)
                             .Where(e => e.TelegramInfo.ChatId != null).ToListAsync();
@@ -64,6 +67,9 @@ namespace TelegramService.Quartz.Job
                 }
             }
         }
+        #endregion
+
+        #region Проверка статистики по числу транзакций
         #endregion
     }
 }

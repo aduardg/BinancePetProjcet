@@ -209,6 +209,32 @@ namespace DAL.Migrations
                     b.ToTable("ValueNames", "Binance");
                 });
 
+            modelBuilder.Entity("Domain.Entity.SaveModels.SaveMiddleStatsEntities", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("dateCreate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<double>("middleStatistic")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("namePart")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("nameStatistic")
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("SaveMiddleStatistic", "Binance");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

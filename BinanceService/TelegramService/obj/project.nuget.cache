@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+HGRb9GRH+52Hi9GQ2FAjEoRv9II2+BHNbY5jkF3laBeCJLO/pmrLRi/yD3VsQ+CFGSg9EgrRfhVHH9rHs3wvQ==",
+  "dgSpecHash": "gBx+8o51n6daSpWN+sUbtObpILpo4neMGsZGLxzpCzV9YhCNTULHd+Fy8j9/7+Rg7uI1BrD2oTEteiwB7wee1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\e.gudz\\Desktop\\projects\\BigProj\\BinancePetProjcet\\BinanceService\\TelegramService\\TelegramService.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\e.gudz\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
     "C:\\Users\\e.gudz\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0\\microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\e.gudz\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\e.gudz\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.2\\microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512",
     "C:\\Users\\e.gudz\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\e.gudz\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\e.gudz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

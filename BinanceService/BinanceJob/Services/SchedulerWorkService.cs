@@ -19,12 +19,12 @@ namespace BinanceJob.Services
             var scheduler = await factory.GetScheduler();*/
 
             var middleStatistic = GetMiddleStatistic();
-            var countStatistic = GetCountStatistic();
+            //var countStatistic = GetCountStatistic();
 
             await _scheduler.Start();
 
             await _scheduler.ScheduleJob(middleStatistic.Item1, middleStatistic.Item2);
-            await _scheduler.ScheduleJob(countStatistic.Item1, countStatistic.Item2);
+            //await _scheduler.ScheduleJob(countStatistic.Item1, countStatistic.Item2);
         }
 
         private  (IJobDetail,ITrigger) GetMiddleStatistic()
@@ -42,19 +42,19 @@ namespace BinanceJob.Services
             return (job, trigger);
         }
 
-        private (IJobDetail,ITrigger) GetCountStatistic()
-        {
-            var job = JobBuilder.Create<CountTransactionJob>()
-               .WithIdentity("CountTransactionJob", "group2")
-               .Build();
+        //private (IJobDetail,ITrigger) GetCountStatistic()
+        //{
+        //    var job = JobBuilder.Create<CountTransactionJob>()
+        //       .WithIdentity("CountTransactionJob", "group2")
+        //       .Build();
 
-            var trigger = TriggerBuilder.Create()
-                .WithIdentity("CountTransactionTrigger", "group2")
-                .WithCronSchedule("*/5 * * * * ?")
-                //.WithCronSchedule("*/15 * * * * ?")
-                .Build();
+        //    var trigger = TriggerBuilder.Create()
+        //        .WithIdentity("CountTransactionTrigger", "group2")
+        //        .WithCronSchedule("*/5 * * * * ?")
+        //        //.WithCronSchedule("*/15 * * * * ?")
+        //        .Build();
 
-            return (job, trigger);
-        }
+        //    return (job, trigger);
+        //}
     }
 }
