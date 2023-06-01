@@ -48,11 +48,19 @@ namespace BinanceJob.Services
         //       .WithIdentity("CountTransactionJob", "group2")
         //       .Build();
 
+<<<<<<< HEAD
         //    var trigger = TriggerBuilder.Create()
         //        .WithIdentity("CountTransactionTrigger", "group2")
         //        .WithCronSchedule("*/5 * * * * ?")
         //        //.WithCronSchedule("*/15 * * * * ?")
         //        .Build();
+=======
+            var trigger = TriggerBuilder.Create()
+                .WithIdentity("CountTransactionTrigger", "group2")
+                .WithCronSchedule("0 0 */1 * * ?")
+                //.WithCronSchedule("*/15 * * * * ?")
+                .Build();
+>>>>>>> f09d0e873823d616052d03b8ed8ac34a4cab5105
 
         //    return (job, trigger);
         //}
